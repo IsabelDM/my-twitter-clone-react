@@ -7,6 +7,7 @@ import { GoogleLogin } from 'react-google-login';
 import config from '../config.js';
 
 import MyPlaceBird from '../images/bird.png';
+
 var imgStyle = {
   maxWidth: "85px",
 };
@@ -38,6 +39,7 @@ export default function App(props){
             <Nav className="ml-auto" navbar>
               <NavItem>
                 {loginMessage}
+                
                 <GoogleLogin
                   clientId={config.clientID}
                   buttonText="Login with Google"

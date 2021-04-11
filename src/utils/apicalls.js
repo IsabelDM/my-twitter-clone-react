@@ -6,7 +6,7 @@ export{
     deletePost,
     postNewPost,
     putExistingPost
-}
+};
 
 function getAllPosts() {
     return API.get('/posts').then(res => res.data);
