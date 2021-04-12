@@ -24,7 +24,7 @@ export default function PostList(){
 
   return (
     <div>
-      <CardTitle tag="center"><Alert color="primary"><strong>Posts publicados </strong><Badge pill>{posts.length}</Badge></Alert></CardTitle>
+      <CardTitle tag="center"><Alert color="secondary"><strong>Tweets publicados </strong><Badge pill>{posts.length}</Badge></Alert></CardTitle>
       <Table>
         <tbody>
           { posts.map((post, index) => {

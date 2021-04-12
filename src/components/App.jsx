@@ -34,7 +34,7 @@ export default function App(props){
     <Container>
       <Row>
         <Col>
-          <Navbar color="primary" light expand="md">
+          <Navbar color="secondary" light expand="md">
           <Media style={imgStyle} object src={MyPlaceBird} alt="Bird"/><NavbarBrand><h4 className="text-white">My Twitter Clone</h4></NavbarBrand>
             <Nav className="ml-auto" navbar>
               <NavItem>

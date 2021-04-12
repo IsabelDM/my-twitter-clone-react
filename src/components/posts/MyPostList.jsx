@@ -20,7 +20,7 @@ import EditPost from './EditPost';
 export default function MyPostList(props){
 
   const [posts, setPosts] = useState([]);
-  const [edit, setEdit] = useState(<Alert color="warning">Seleccione editar un post de la lista</Alert>);
+  const [edit, setEdit] = useState(<Alert color="warning">Seleccione un tweet para editar de la lista</Alert>);
   const [activeTab, setActiveTab] = useState('1');
   const [showDeleteModal, setShowDeleteModal] = useState(null);
 
@@ -42,12 +42,12 @@ export default function MyPostList(props){
   const askForDelete = (post) => {
     setShowDeleteModal(
       <Modal isOpen="true" className={props.className}>
-        <ModalHeader>Eliminar post</ModalHeader>
+        <ModalHeader>Eliminar </ModalHeader>
         <ModalBody>
-          Se va a eliminar el post:<br/><small><strong>{post.message}</strong></small>
+          Se va a eliminar el tweet:<br/><small><strong>{post.message}</strong></small>
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={() => deletePostSel(post)}>Eliminar</Button>{' '}
+          <Button color="secondary" onClick={() => deletePostSel(post)}>Eliminar</Button>{' '}
           <Button color="secondary" onClick={() => setShowDeleteModal(null)}>Cancelar</Button>
         </ModalFooter>
       </Modal>
@@ -65,7 +65,7 @@ export default function MyPostList(props){
     //if ok, remove modal and reset edit component
     if (res === "OK"){
       setShowDeleteModal(null);
-      setEdit(<Alert color="warning">Seleccione editar un post de la lista</Alert>);
+      setEdit(<Alert color="warning">Seleccione un tweet para editar de la lista</Alert>);
       handleUpdateMyPosts();
     }else{
       //TODO Show a modal when error from server
@@ -85,7 +85,7 @@ export default function MyPostList(props){
       {showDeleteModal}
       <Row>
         <Col xs="7">
-          <CardTitle tag="center"><Alert color="primary"><strong>Mis Posts publicados </strong><Badge pill>{posts.length}</Badge></Alert></CardTitle>
+          <CardTitle tag="center"><Alert color="secondary"><strong>Mis Tweets publicados </strong><Badge pill>{posts.length}</Badge></Alert></CardTitle>
           <Table>
             <tbody>
               { posts.map((post, index) => {

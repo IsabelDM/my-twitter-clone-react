@@ -8,15 +8,15 @@ import config from '../config.js';
 export default function HeaderDashboard(props){
 
   return (
-    <Navbar color="primary" light expand="md">
-      <NavbarBrand><FaCogs color="white"/><span className="text-white"><strong> Dashboard:</strong> {sessionStorage.getItem('name')}</span></NavbarBrand>
+    <Navbar color="secondary" light expand="md">
+      <NavbarBrand><FaCogs color="purple"/><span className="text-white"><strong> Dashboard:</strong> {sessionStorage.getItem('name')}</span></NavbarBrand>
       <Collapse navbar>
         <Nav className="ml-auto" navbar>
           <NavItem>
-            <NavLink href="#" onClick={() => props.onShow(1)}><span className="text-white">Todos los Posts</span></NavLink>
+            <NavLink href="#" onClick={() => props.onShow(1)}><span className="text-white">Todos los Tweets</span></NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#" onClick={() => props.onShow(2)}><span className="text-white">Mis Posts</span></NavLink>
+            <NavLink  href="#" onClick={() => props.onShow(2)}><span className="text-white">Mis Tweets</span></NavLink>
           </NavItem>
           <NavItem>
             <GoogleLogout
